@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ---- Shell ---- */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #ede5d8;
+    padding: 0 48px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Inter', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(60, 40, 20, 0.06);
+}
+
+/* ---- Logo ---- */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1c1410;
+    letter-spacing: -0.2px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.logo-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1c1410;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ---- Centre links ---- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    position: relative;
+    color: #5a4a3a;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: color 0.18s ease, background 0.18s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #1c1410;
+    background: #f5ede3;
+}
+
+/* active underline — add className="nav-link active" via NavLink if desired */
+.nav-link.active {
+    color: #3d2e20;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: #3d2e20;
+    border-radius: 2px;
+}
+
+/* ---- Right section ---- */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+/* Name + role pill group */
+.user-avatar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.welcome {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #3d2e20;
+}
+
+.role-badge {
+    background: #f3ece3;
+    color: #7a5535;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 1px solid #e0cdb8;
+    letter-spacing: 0.2px;
+}
+
+/* ---- Logout button ---- */
+.logout-btn {
+    background: transparent;
+    color: #8b5e3c;
+    border: 1.5px solid #d4b49a;
+    padding: 6px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.logout-btn:hover {
+    background: #3d2e20;
+    color: #fdf8f3;
+    border-color: #3d2e20;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2px;
+    }
+}

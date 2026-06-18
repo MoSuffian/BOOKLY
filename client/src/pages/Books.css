@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ---- Page shell ---- */
+.books-container {
+    padding: 40px 48px;
+    background: #faf8f5;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ---- Header ---- */
+.catalog-header {
+    margin-bottom: 28px;
+}
+
+.books-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1c1410;
+    margin: 0 0 6px;
+    letter-spacing: -0.3px;
+}
+
+.catalog-subtitle {
+    font-size: 0.88rem;
+    color: #7a6652;
+    margin: 0;
+}
+
+/* ---- Search row ---- */
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    color: #a08060;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.search-box {
+    width: 100%;
+    padding: 11px 40px 11px 40px;
+    border: 1.5px solid #e0d8ce;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    color: #1c1410;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 1px 3px rgba(60, 40, 20, 0.04);
+}
+
+.search-box::placeholder {
+    color: #b0977a;
+}
+
+.search-box:focus {
+    border-color: #8b5e3c;
+    box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.1);
+}
+
+.search-clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a08060;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+}
+
+.search-clear:hover {
+    color: #3d2e20;
+}
+
+.results-count {
+    font-size: 0.82rem;
+    color: #8b7355;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ---- Section title (used in ManageBooks too) ---- */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1c1410;
+    margin: 0 0 20px;
+}
+
+/* ---- Empty / no-results state ---- */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 72px 0;
+    color: #a08060;
+    font-size: 0.88rem;
+}
+
+/* ---- Book grid ---- */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+/* ---- Book card ---- */
+.book-card {
+    background: #ffffff;
+    border: 1px solid #ede5d8;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(60, 40, 20, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(60, 40, 20, 0.11);
+}
+
+/* ---- Cover ---- */
+.cover-wrapper {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5ede3;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.cover-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.cover-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #c4a882;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+/* ---- Card body ---- */
+.book-card-body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.book-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1c1410;
+    margin: 0 0 6px;
+    line-height: 1.35;
+}
+
+.book-meta {
+    font-size: 0.78rem;
+    color: #7a6652;
+    margin: 2px 0;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #3d2e20;
+}
+
+/* ---- Card footer: availability + button ---- */
+.book-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+/* ---- Availability badges ---- */
+.available {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #edf7f0;
+    color: #2d7a4a;
+    border: 1px solid #b6e4c7;
+    white-space: nowrap;
+}
+
+.unavailable {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #fdf1f0;
+    color: #c0392b;
+    border: 1px solid #f5c6c2;
+    white-space: nowrap;
+}
+
+/* ---- Borrow button ---- */
+.borrow-btn {
+    background: #3d2e20;
+    color: #fdf8f3;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.18s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.borrow-btn:hover:not(:disabled) {
+    background: #5c4430;
+    transform: translateY(-1px);
+}
+
+.borrow-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .books-container {
+        padding: 24px 20px;
+    }
+
+    .search-wrapper {
+        max-width: 100%;
+    }
+}
